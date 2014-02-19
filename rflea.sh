@@ -10,22 +10,22 @@ NODERED_SERVICE_DIRECTORY=/etc/init/node-red.conf
 install(){
         cd $INSTALL_DIRECTORY
 
-        echo "Downloading Spacebrew \n"
+        echo "Downloading Spacebrew"
         git clone $SPACEBREW_GIT
 
-        echo "Downloading Node-red \n"
+        echo "Downloading Node-red"
         git clone $NODERED_GIT
 
-        echo "Installing Spacebrew \n"
+        echo "Installing Spacebrew"
         cd ${INSTALL_DIRECTORY}/spacebrew
         npm install ws
         npm install firebase
 
-        echo "Installing Node-red \n"
+        echo "Installing Node-red"
         cd ${INSTALL_DIRECTORY}/node-red
         npm install
 
-        echo "Setting services \n"
+        echo "Setting services"
         cd $INSTALL_DIRECTORY
         cp ./spacebrew/spacebrew.conf $SPACEBREW_SERVICE_DIRECTORY
         chmod +x /etc/init/spacebrew.conf
@@ -43,7 +43,7 @@ uninstall() {
         stop spacebrew
         stop node-red
         cd $INSTALL_DIRECTORY
-        echo "Removing files \n"
+        echo "Removing files"
         rm -R ${INSTALL_DIRECTORY}/node-red
         rm -R ${INSTALL_DIRECTORY}/spacebrew
         rm /etc/init/node-red.conf
@@ -82,10 +82,10 @@ update() {
 }
 
 print_instructions() {
-        echo "This are the available options:\n"
-        echo " install\n"
-        echo " update [spacebrew|node-red] \n"
-        echo " uninstall \n"
+        echo "This are the available options:"
+        echo " install"
+        echo " update [spacebrew|node-red]"
+        echo " uninstall"
 }
 
 # logic
