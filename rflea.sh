@@ -10,6 +10,25 @@ NODERED_SERVICE_DIRECTORY=/etc/init/node-red.conf
 install(){
         mkdir -p $INSTALL_DIRECTORY
         cd $INSTALL_DIRECTORY
+        
+        apt-get update
+        apt-get install -y g++ curl libssl-dev apache2-utils git make mongodb-server
+
+        # node
+        echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
+        PATH=$HOME/local/bin:$PATH
+        . ~/.bashrc
+        mkdir ~/local
+        mkdir ~/node-latest-install
+        cd ~/node-latest-install
+        curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
+        ./configure --prefix=~/local
+        make install
+
+        # npm
+        wget https://npmjs.org/install.sh
+        chmod +x install.sh
+        ./install.sh
 
         echo "Downloading Spacebrew"
         git clone $SPACEBREW_GIT
