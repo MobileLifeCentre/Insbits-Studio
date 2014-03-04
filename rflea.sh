@@ -8,6 +8,7 @@ NODERED_SERVICE_DIRECTORY=/etc/init/node-red.conf
 
 # functions
 install(){
+        mkdir -p $INSTALL_DIRECTORY
         cd $INSTALL_DIRECTORY
 
         echo "Downloading Spacebrew"
