@@ -3,8 +3,7 @@ rflea-toolkit
 
 Install:
 
-    git clone https://github.com/MobileLifeCentre/rFlea-toolkit.git
-    cd rFlea-toolkit
+    wget https://raw.github.com/MobileLifeCentre/rFlea-toolkit/master/rflea.sh
     chmod +x rflea.sh
     ./rflea.sh install
 
