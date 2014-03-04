@@ -19,8 +19,7 @@ install(){
 
         echo "Installing Spacebrew"
         cd ${INSTALL_DIRECTORY}/spacebrew
-        npm install ws
-        npm install firebase
+        npm install
 
         echo "Installing Node-red"
         cd ${INSTALL_DIRECTORY}/node-red
