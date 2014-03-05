@@ -30,6 +30,8 @@ install(){
         chmod +x install.sh
         ./install.sh
 
+        cd $INSTALL_DIRECTORY
+
         echo "Downloading Spacebrew"
         git clone $SPACEBREW_GIT
 
